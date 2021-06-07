@@ -13,10 +13,13 @@ class Hero {
     console.log(this.catchPhrases[Math.floor(Math.random() * this.catchPhrases.length)]);
   }
   announceHealth(){
-    console.log(this.health)
+    console.log(this.name + ' : Yikes! My health is ' + this.health + ' !')
   }
-  fight(){
-    console.log('i\'m ready to rumble')
+  fight(enemy){
+    console.log('i\'m ready to rumble');
+    console.log('take ' + this.weapons.sprinkleSpray + ' hitpoints!');
+    enemy.health -= this.weapons.sprinkleSpray;
+    console.log(enemy.name + ' got hit by sprinkleSpray! His health is now ' + enemy.health + ' .');
   }
 }
 
@@ -34,10 +37,26 @@ class Enemy {
   talkSmack(){
     console.log(this.catchPhrases[Math.floor(Math.random() * this.catchPhrases.length)]);
   }
-  fight(){
-    console.log('i\'m gonna flatten you like a slice of pepperoni!')
+  announceHealth(){
+    console.log(this.name + ' : Oh no! My health is ' + this.health + ' !')
   }
+  fight(enemy){
+    console.log('i\'m gonna flatten you like a slice of pepperoni!');
+    console.log('take ' + this.weapons.pepperoniStars + ' hitpoints!');
+    enemy.health -= this.weapons.pepperoniStars;
+    console.log(enemy.name + ' got hit by pepperoniStars! His health is now ' + enemy.health + ' .');
+  }
+
 }
 
 const dougie = new Hero('Dougie the Donut');
 const pizzaRat = new Enemy('Pizza Rat');
+dougie.talkSass();
+pizzaRat.talkSmack();
+dougie.announceHealth();
+pizzaRat.announceHealth();
+pizzaRat.fight(dougie);
+pizzaRat.fight(dougie);
+dougie.fight(pizzaRat);
+pizzaRat.announceHealth();
+dougie.announceHealth();
