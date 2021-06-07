@@ -1,5 +1,5 @@
 class Hamster {
-  constructor(name){ // name is the parameter
+  constructor(name, owner, price){ // name is the parameter
     this.owner = '';
     this.name = name;
     this.price = 15;
@@ -14,3 +14,46 @@ class Hamster {
     return this.price;
   }
 }
+class Person {
+  constructor(name, age, height, weight, mood, hamsters, bankAccount){
+    this.name = name;
+    this.age = 0;
+    this.height = 0;
+    this.weight = 0;
+    this.mood = 0;
+    this.hamsters = [];
+    this.bankAccount = 0;
+  }
+  getName(){
+    return this.name;
+  }
+  getAge(){
+    return this.age;
+  }
+  getWeight(){
+    return this.weight;
+  }
+  greet(){
+    console.log('Hello')
+  }
+  eat(){
+    this.weight++;
+    this.mood++;
+  }
+  exercise(){
+    this.weight--;
+  }
+  ageUp(){
+    this.age++;
+    this.height++;
+    this.weight++;
+    this.mood--;
+    this.bankAccount+=10;
+  }
+  buyHamster(hamster){
+    this.hamsters.push();
+    this.mood+=10;
+    this.bankAccount -= getPrice();
+  }
+}
+console.log('hi');
