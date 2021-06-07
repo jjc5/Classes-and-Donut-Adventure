@@ -1,6 +1,6 @@
 class Hamster {
   constructor(name, owner, price){ // name is the parameter
-    this.owner = '';
+    this.owner = owner;
     this.name = name;
     this.price = 15;
   }
@@ -51,9 +51,38 @@ class Person {
     this.bankAccount+=10;
   }
   buyHamster(hamster){
-    this.hamsters.push();
+    this.hamsters.push(hamster);
     this.mood+=10;
-    this.bankAccount -= getPrice();
+    this.bankAccount -= 15;
   }
 }
-console.log('hi');
+
+const timmy = new Person('Timmy');
+const gus = new Hamster('Gus', 'Timmy');
+
+for (let i=0; i<5; i++){
+  timmy.ageUp();
+}
+for (let i=0; i<5; i++){
+  timmy.eat();
+}
+for (let i=0; i<5; i++){
+  timmy.exercise();
+}
+for (let i=0; i<9; i++){
+  timmy.ageUp();
+}
+
+timmy.buyHamster(gus);
+
+for (let i=0; i<15; i++){
+  timmy.ageUp();
+}
+
+for (let i=0; i<2; i++){
+  timmy.eat();
+}
+
+for (let i=0; i<2; i++){
+  timmy.exercise();
+}
